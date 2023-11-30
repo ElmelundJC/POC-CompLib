@@ -3,10 +3,10 @@ name: Build and publish
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   builds:
@@ -17,5 +17,5 @@ jobs:
           run: yarn
         - name: Build packages
           run: yarn build
-          
+
     
