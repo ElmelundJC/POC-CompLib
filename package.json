@@ -13,15 +13,13 @@
     "@commitlint/config-conventional": "^18.4.3",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
-    "husky": "^8.0.3",
     "lerna": "^8.0.0"
   },
   "scripts": {
     "build": "yarn lerna run build",
     "dev": "yarn lerna run dev",
     "publish": "yarn build && yarn lerna publish",
-    "commit": "yarn git-cz",
-    "postinstall": "husky install"
+    "commit": "yarn git-cz"
   },
   "config": {
     "commitizen": {
