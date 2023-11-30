@@ -20,16 +20,12 @@
     "build": "yarn lerna run build",
     "dev": "yarn lerna run dev",
     "publish": "yarn build && yarn lerna publish",
-    "commit": "yarn git-cz"
+    "commit": "yarn git-cz",
+    "postinstall": "husky install"
   },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
 }
