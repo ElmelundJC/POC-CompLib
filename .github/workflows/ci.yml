@@ -6,6 +6,11 @@ on:
       - master
       - main
 
+permissions:
+  contents: write # for checkout and tag
+  pull-requests: write  # for comments
+  packages: write # for publish
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -61,6 +66,13 @@ jobs:
           node-version: 18
           registry-url: https://npm.pkg.github.com/
           scope: "@ElmelundJC"
+      - name: Git Identity
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/$GITHUB_REPOSITORY
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: yarn
       - run: yarn publish-ci
         env:

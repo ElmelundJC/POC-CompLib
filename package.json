@@ -24,7 +24,7 @@
     "versionup:minor": "lerna version minor --conventional-commits --no-git-tag-version",
     "versionup:major": "lerna version major --conventional-commits --no-git-tag-version",
     "publish": "yarn build && yarn lerna publish --no-private",
-    "publish-ci": "lerna publish from-package -y --no-verify-access --no-private"
+    "publish-ci": "lerna publish from-package -y --no-private"
   },
   "config": {
     "commitizen": {
